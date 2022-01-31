@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Bot Controller</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <style>style.css</style>
+    <script src="jquery-3.6.0.js"></script>
+    <button id="forward" type="button" class="button2">Forward</button></br>
+    <button id="left" type="button" class="button1">Left</button>
+    <button id="stop" type="button" class="button1">Stop</button>
+    <button id="right" type="button" class="button1">Right</button>
+    <br/>
+    <button id="backward" type="button" class="button2">Backward</button></br>
+    <br/>
+    <button id="leftsignal" type="button" class="button1">Left Signal</button>
+    <button id="U-turn" type="button" class="button1">U-Turn</button>
+    <button id="rightsignal" type="button" class="button1">Right Signal</button>
+    <br/>
+    <p id="speed">Speed Setting: 0.5</p>
+    <button id="up" type="s1" class="button3"></button>
+    <button id="down" type="s2" class="button4"></button>
+	<hr>
+    <p id="distance">Distance Sensor: 0cm</p>
+	<br/><br/>
+    <button id="sdistance" type="s2" class="button1">Start Sensor</button>
+    <button id="edistance" type="s2" class="button1">Stop Sensor</button></br>
+    <button id="d" type="s2" class="button1">Update Distancer</button></br>
+
+    <textarea id="message">
+    </textarea>
+    <script>
+      $("button").click(function(){
+        $.ajax({url: "http://esl225.local:8080/" + event.target.id, 
+          success: function(result){ $("#message").append(result + "\n")
+		if (result.includes("Speed")){
+			document.getElementById("speed").innerHTML = "Speed Setting: " + result.substr(result.length - 3);
+		}
+		if (result.includes("Distance")){
+			document.getElementById("distance").innerHTML = "Distance Sensor: " + result.substr(result.length - 3) + "cm";
+		}
+	}});
+      });    
+    </script>
+  </body>
+</html>

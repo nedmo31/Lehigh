@@ -1,0 +1,69 @@
+body {
+  background-color: lightgreen;
+}
+
+p {
+  font-family: Verdana
+}
+
+.button1 {
+  background-color: #0000FF;
+  border: none;
+  color: white;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 15px 20px
+}
+
+.button2 {
+  background-color: #0000FF;
+  border: none;
+  color: white;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 15px 165px
+}
+
+.button3 {
+  border: none;
+  background: url("Up.png") no-repeat;
+  width: 100px;
+  height: 50px;
+  cursor:pointer; 
+}
+
+.button4 {
+  border: none;
+  background: url("Down.png") no-repeat;
+  width: 100px;
+  height: 57px;
+  cursor:pointer; 
+}
+
+.button1:hover {
+  background-color: #00008B;
+}
+
+.button2:hover {
+  background-color: #00008B;
+}
+
+.button3:hover {
+  background: url("UpH.png") no-repeat;
+}
+
+.button4:hover {
+  background: url("DownH.png") no-repeat;
+}
+
+
